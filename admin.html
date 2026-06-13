@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel FutSalva</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="admin-container">
+
+        <h1>Painel Administrativo</h1>
+
+        <button class="btn-sair" onclick="logout()">
+    Sair
+</button>
+
+        <div class="dashboard">
+
+    <div class="card-dashboard">
+
+        <h3>Total de Eventos</h3>
+
+        <p id="totalEventos">0</p>
+
+    </div>
+
+    <div class="card-dashboard">
+
+        <h3>Próximo Evento</h3>
+
+        <p id="proximoEvento">Nenhum evento</p>
+
+    </div>
+
+</div>
+
+        <h2>Cadastrar Evento</h2>
+
+        <form id="eventoForm">
+
+            <input type="text" id="titulo" placeholder="Nome do Evento">
+
+            <input type="date" id="data">
+
+            <input type="text" id="local" placeholder="Local">
+
+            <textarea id="descricao" placeholder="Descrição"></textarea>
+
+            <button type="submit">
+                Salvar Evento
+            </button>
+
+        </form>
+
+        <h2>Eventos Cadastrados</h2>
+
+<table id="tabelaEventos">
+
+    <thead>
+        <tr>
+            <th>Evento</th>
+            <th>Data</th>
+            <th>Local</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+
+    <tbody id="corpoTabela">
+
+    </tbody>
+
+</table>
+
+    </div>
+
+    <script src="js/admin.js"></script>
+
+</body>
+
+<script>
+
+if(localStorage.getItem("logado") !== "true"){
+
+    window.location.href = "login.html";
+
+}
+
+</script>
+
+</html>
